@@ -21,7 +21,7 @@ dat_st_s <- dat_st_s %>%
     mutate(bin = ntile(x = start_rt, 5))
 
 dat_st_l <- dat_st_l %>%
-    group_by(vpNum, Comp) %>%	
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = start_rt, 5))
 
 # dat_st_s <- dat_st_s %>%
