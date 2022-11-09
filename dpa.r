@@ -1,5 +1,5 @@
-# source("./MouseConflict_Exp1.R")
-# library('psychReport')
+source("./MouseConflict_Exp1.R")
+library('psychReport')
 ###############################################################################
 #                              Delta Plot; Start                              #
 ###############################################################################
@@ -17,10 +17,18 @@ dat_st_l <- dat_st %>%
     filter(Size == "large")
 
 dat_st_s <- dat_st_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = start_rt, 5))
 
 dat_st_l <- dat_st_l %>%
+    group_by(vpNum, Comp) %>%	
     mutate(bin = ntile(x = start_rt, 5))
+
+# dat_st_s <- dat_st_s %>%
+#     mutate(bin = ntile(x = start_rt, 5))
+
+# dat_st_l <- dat_st_l %>%
+#     mutate(bin = ntile(x = start_rt, 5))
 
 dat_st_s <- dat_st_s %>%
     filter(bin == "1") %>%
@@ -118,9 +126,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -219,9 +229,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -320,9 +332,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -421,9 +435,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -522,9 +538,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -623,9 +641,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
@@ -724,9 +744,11 @@ dat_en_l <- dat_en %>%
     filter(Size == "large")
 
 dat_en_s <- dat_en_s %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_l <- dat_en_l %>%
+    group_by(vpNum, Comp) %>%
     mutate(bin = ntile(x = end_rt, 5))
 
 dat_en_s <- dat_en_s %>%
