@@ -1,5 +1,5 @@
-# source("./MouseConflict_Exp1.R")
-# library('psychReport')
+source("./MouseConflict_Exp1.R")
+library('psychReport')
 ###############################################################################
 #                              Delta Plot; Start                              #
 ###############################################################################
@@ -287,7 +287,7 @@ dat_en_l <- dat_en_l %>%
 #  t.test  #
 ############
 t_en_25 <- t.test(dat_en_l$RT, dat_en_s$RT, paired = TRUE, alternative = "greater")
-t_en_25 <- statStrT(t_en)
+t_en_25 <- statStrT(t_en_25)
 
 ##############
 #  cleaning  #
