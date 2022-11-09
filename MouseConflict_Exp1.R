@@ -130,6 +130,9 @@ dat_aov <- dat_aov %>%
 dat_err <- dat_err %>%
     filter(!vpNum %in% c(4, 7, 10))
 
+dat_stat <- dat %>%
+    filter(!vpNum %in% c(4, 7, 10))
+
 table(dat_aov$vpNum)
 ####
 rm(datDir, datFiles, f)
@@ -143,6 +146,15 @@ n <- vpInfo(dat_aov)
 #######
 #  n  #
 #######
+
+##########################
+#  some data for report  #
+##########################
+n_err_out_stat = sum(!dat_stat$isCorr) - sum(dat_stat$isOut)
+err_out_p_stat <- n_err_out_stat / nrow(dat_stat)
+# rt_out_p  <- sum(dat$isOut) / nrow(dat)
+# cl_out_p  <- sum(dat$ClickOut) / nrow(dat)
+out_stat <- sum(dat_stat$Excl)/nrow(dat_stat)
 
 ##########################
 #  additional exclusion  #
