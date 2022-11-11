@@ -46,7 +46,7 @@ exp1_delta_movement_rt_large <- dmcObservedData(dat[dat$resp_size == "large", ],
 
 exp1_delta_movement_combined <- dmcCombineObservedData(exp1_delta_movement_rt_small, exp1_delta_movement_rt_large)
 
-pdf("./plots/delta_movement.pdf")
+pdf("../BA_analysis/plots/delta_movement.pdf")
 plot(exp1_delta_movement_combined, legend = FALSE, resetPar = FALSE)
 # title(main="Delta Plot for the Initiation times")
 legend(450, 175, legend = c("Small", "Large"), lty = c(1,1), col = c("black", "grey"))
@@ -63,7 +63,7 @@ exp1_delta_end_rt_large    <- dmcObservedData(dat[dat$resp_size == "large", ], n
 
 exp1_delta_end_combined <- dmcCombineObservedData(exp1_delta_end_rt_small, exp1_delta_end_rt_large)
 
-pdf("./plots/delta_end.pdf")
+pdf("../BA_analysis/plots/delta_end.pdf")
 plot(exp1_delta_end_combined, legend = FALSE, resetPar = FALSE)
 # title(main="Delta Plot for the Reaction times")
 legend(750, 195, legend = c("Small", "Large"), lty = c(1,1), col = c("black", "grey"))
@@ -301,6 +301,107 @@ rm(
    t_s,
    t_l
 )
+
+###########
+#   6v6   #
+###########
+t_l <- exp1_delta_end_rt_large$deltaSubject %>%
+    filter(Bin == "6")
+
+t_s <- exp1_delta_end_rt_small$deltaSubject %>%
+    filter(Bin == "6")
+
+t_en_6 <- t.test(
+               t_s$meanEffect,
+               t_l$meanEffect,
+               paired = TRUE
+)
+
+t_en_6_t <- statStrT(t_en_6)
+
+#################
+#  cleaning up  #
+#################
+rm(
+   t_s,
+   t_l
+)
+
+###########
+#   7v7   #
+###########
+t_l <- exp1_delta_end_rt_large$deltaSubject %>%
+    filter(Bin == "7")
+
+t_s <- exp1_delta_end_rt_small$deltaSubject %>%
+    filter(Bin == "7")
+
+t_en_7 <- t.test(
+               t_s$meanEffect,
+               t_l$meanEffect,
+               paired = TRUE
+)
+
+t_en_7_t <- statStrT(t_en_7)
+
+#################
+#  cleaning up  #
+#################
+rm(
+   t_s,
+   t_l
+)
+
+###########
+#   8v8   #
+###########
+t_l <- exp1_delta_end_rt_large$deltaSubject %>%
+    filter(Bin == "8")
+
+t_s <- exp1_delta_end_rt_small$deltaSubject %>%
+    filter(Bin == "8")
+
+t_en_8 <- t.test(
+               t_s$meanEffect,
+               t_l$meanEffect,
+               paired = TRUE
+)
+
+t_en_8_t <- statStrT(t_en_8)
+
+#################
+#  cleaning up  #
+#################
+rm(
+   t_s,
+   t_l
+)
+
+###########
+#   9v9   #
+###########
+t_l <- exp1_delta_end_rt_large$deltaSubject %>%
+    filter(Bin == "9")
+
+t_s <- exp1_delta_end_rt_small$deltaSubject %>%
+    filter(Bin == "9")
+
+t_en_9 <- t.test(
+               t_s$meanEffect,
+               t_l$meanEffect,
+               paired = TRUE
+)
+
+t_en_9_t <- statStrT(t_en_9)
+
+#################
+#  cleaning up  #
+#################
+rm(
+   t_s,
+   t_l
+)
+
 
 ##############
 #  Movement  #
