@@ -12,7 +12,7 @@ library('psychReport')
 ###############################################################################
 #                             reading in the Data                             #
 ###############################################################################
-datDir <- paste("~/Desktop/BA/BA_analysis", "/Exp1", sep="")
+datDir <- "~/Desktop/BA/Exp1"
 datFiles <- list.files(path = datDir, pattern = ("mouseFlanker_\\d+.json$"),
                        full.names = TRUE)
 
