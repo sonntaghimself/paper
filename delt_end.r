@@ -263,53 +263,6 @@ rm(
 )
 
 
-##############
-#  Movement  #
-##############
-###########
-#   4v1   #
-###########
-t_l <- NULL
-t_s <- NULL
-
-t_l <- exp1_delta_movement_rt_large$deltaSubject %>%
-    filter(Bin == "4")
-
-t_s <- exp1_delta_movement_rt_small$deltaSubject %>%
-    filter(Bin == "1")
-
-t_mov_41 <- t.test(
-               t_l$meanEffect,
-               t_s$meanEffect,
-               paired = TRUE,
-               alternative = "greater"
-)
-
-t_mov_41 <- statStrT(t_mov_41)
-
-#################
-#  cleaning up  #
-#################
-rm(
-   t_s,
-   t_l
-)
-
-###########
-#   5v3   #
-###########
-t_l <- NULL
-t_s <- NULL
-
-t_l <- exp1_delta_movement_rt_large$deltaSubject %>%
-    filter(Bin == "5")
-
-t_s <- exp1_delta_movement_rt_small$deltaSubject %>%
-    filter(Bin == "3")
-
-t_mov_53 <- t.test(
-               t_l$meanEffect,
-               t_s$meanEffect,
                paired = TRUE,
                alternative = "greater"
 )
