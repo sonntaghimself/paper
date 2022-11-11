@@ -49,8 +49,8 @@ t_s <- exp1_delta_movement_rt_small$deltaSubject %>%
     filter(Bin == "1")
 
 t_mov_1 <- t.test(
-               t_s$meanEffect,
                t_l$meanEffect,
+               t_s$meanEffect,
                paired = TRUE
 )
 
